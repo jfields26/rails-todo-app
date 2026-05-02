@@ -1,0 +1,23 @@
+<% content_for :title, "New todo" %>
+
+
+
+
+
+
+
+<%= render "shared/form_card", title: "New Todo" do %>
+  <% if current_user.categories.empty? %>
+    <div class="alert alert-warning">
+      You need to create a category before adding a ToDo.
+      <%= link_to "Create one now", new_category_path, class: "btn btn-sm btn-primary ms-2" %>
+    </div>
+  <% else %>
+    <%= render "form", todo: @todo %>
+  <% end %>
+<% end %>
+
+
+
+
+<br>

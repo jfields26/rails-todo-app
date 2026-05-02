@@ -1,0 +1,59 @@
+<%= form_with(model: todo) do |form| %>
+
+  <% if @todo.errors.any? %>
+    <div class="alert alert-danger">
+      <% @todo.errors.full_messages.each do |msg| %>
+        <div><%= msg %></div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= hidden_field_tag :return_to, params[:return_to] %>
+  </div>
+  
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :priority %>
+    <%= form.check_box :priority %>
+  </div>
+
+  <div>
+    <%= form.label :completed %>
+    <%= form.check_box :completed %>
+  </div>
+
+  <div>
+    
+    <div class="mb-3" style="max-width: 300px;">
+      <%= form.label :category_id %>
+
+      <%= form.collection_select :category_id,
+            current_user.categories,
+            :id,
+            :name,
+            { prompt: "Select a category" },
+            { class: "form-select" } %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :notes %>
+    <%= form.text_area :notes, class: "form-control", style: "resize: both; min-height: 100px; width: 300px; max-width: 450px;" %>
+  </div>
+
+  <div class="d-flex gap-2 mt-3">
+
+    <%= form.submit "Update Todo", class: "btn btn-success" %>
+
+    <%= link_to "Show this todo", @todo, class: "btn btn-outline-primary" %>
+
+    <%= link_to "Back", params[:return_to] || todos_path, class: "btn btn-outline-secondary" %>
+
+  </div>
+
+
+<% end %>

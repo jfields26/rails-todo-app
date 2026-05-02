@@ -1,0 +1,44 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+
+
+ body {
+    background-color: #f8f9fa;
+  }
+
+.form-control {
+    border-radius: 8px;
+}
+  
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.nav-left a {
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.nav-right form {
+    display: inline;
+}
+
+.devise-error-messages {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 10px;
+    color: #dc3545; /* Bootstrap red */
+    font-weight: 600;
+  }

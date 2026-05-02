@@ -1,0 +1,38 @@
+<h1>Todos</h1>
+
+<div class="container-fluid px-4">
+  <% @todos.each do |todo| %>
+
+    <div class="card mb-2 p-3 w-100 shadow-sm">
+
+      <h5><%= todo.title %></h5>
+
+      <% if todo.priority %>
+        <span class="badge bg-danger">Priority</span>
+      <% end %>
+
+      <% if todo.completed %>
+        <span class="badge bg-success">Completed</span>
+      <% else %>
+        <span class="badge bg-secondary">Pending</span>
+      <% end %>
+
+      <% if todo.notes.present? %>
+        <p>
+          <strong>Notes:</strong><br>
+          <%= simple_format(todo.notes) %>
+        </p>
+      <% end %>
+
+      <div class="d-flex gap-2 mt-2">
+        <%= link_to "View", todo, class: "btn btn-sm btn-outline-primary" %>
+        <%= link_to "Edit", edit_todo_path(todo, return_to: todos_path), class: "btn btn-sm btn-outline-secondary" %>
+        <%= button_to "Delete", todo, method: :delete, class: "btn btn-sm btn-outline-dark" %>
+      </div>
+
+    </div>
+
+  <% end %>
+</div>
+
+<%= link_to "New todo", new_todo_path, class: "btn btn-primary mt-3" %>

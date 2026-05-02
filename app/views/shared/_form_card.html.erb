@@ -1,0 +1,14 @@
+<div class="container-fluid d-flex justify-content-center align-items-start"
+     style="min-height: calc(100vh - 70px); padding-top: 40px;">
+
+  <div class="card shadow-sm p-4 w-100" style="max-width: 500px;">
+
+    <% if local_assigns[:title].present? %>
+      <h2 class="text-center mb-3"><%= title %></h2>
+    <% end %>
+
+    <%= yield %>
+
+  </div>
+
+</div>
