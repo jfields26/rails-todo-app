@@ -48,4 +48,4 @@ Deployment:
 Live App: <your deployed link>
 
 GitHub Repo:
-<your repo link>
+https://github.com/jfields26/rails-todo-app
