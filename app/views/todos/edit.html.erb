@@ -1,7 +1,13 @@
+<!-- Jarred Fields -->
+
 <% content_for :title, "Editing todo" %>
 
 <%= render "shared/form_card", title: "Edit Todo" do %>
   <%= render "form", todo: @todo %>
 <% end %>
+
+<div class="mt-3">
+  <%= link_to "Back", todo_path(@todo), class: "btn btn-outline-secondary" %>
+</div>
 
 <br>
