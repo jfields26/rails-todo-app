@@ -7,7 +7,7 @@
 <% end %>
 
 <div class="mt-3">
-  <%= link_to "Back", todo_path(@todo), class: "btn btn-outline-secondary" %>
+  <%= link_to "Back", todo_path(@todo, source: params[:source]), class: "btn btn-outline-secondary" %>
 </div>
 
 <br>

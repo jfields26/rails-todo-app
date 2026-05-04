@@ -27,7 +27,18 @@
 <% end %>
 
 <div class="d-flex gap-2 mt-3">
-  <%= link_to "Edit this todo", edit_todo_path(@todo), class: "btn btn-outline-secondary" %>
+  <%= link_to "Edit this todo", edit_todo_path(@todo, source: params[:source]), class: "btn btn-outline-secondary" %>
   <%= button_to "Destroy this todo", @todo, method: :delete, class: "btn btn-outline-dark" %>
-  <%= link_to "Back", todos_path, class: "btn btn-outline-primary" %>
+  
+  <% back_path =
+    case params[:source]
+    when "completed"
+      todos_completed_path
+    when "categories"
+      category_path(@todo.category)
+    else
+      todos_path
+    end %>
+  
+  <%= link_to "Back", back_path, class: "btn btn-outline-primary" %>
 </div>

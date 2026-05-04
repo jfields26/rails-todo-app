@@ -17,7 +17,7 @@
 
   <div class="d-flex flex-wrap gap-2 mt-3">
     <% @category.todos.each do |todo| %>
-      <%= link_to todo.title, todo_path(todo, origin: "category"), class: "btn btn-info" %>
+      <%= link_to todo.title, todo_path(todo, source: "categories"), class: "btn btn-info" %>
     <% end %>
   </div>
 </div>
