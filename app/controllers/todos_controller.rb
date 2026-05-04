@@ -42,7 +42,7 @@ class TodosController < ApplicationController
   # PATCH/PUT /todos/1 or /todos/1.json
   def update
     if @todo.update(todo_params)
-      redirect_to todo_path(@todo, origin: params[:origin]), notice: "Todo was successfully updated."
+      redirect_to todo_path(@todo, source: params[:source]), notice: "Todo was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
