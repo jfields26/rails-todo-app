@@ -53,11 +53,9 @@
 
     <%= form.submit @todo.persisted? ? "Update Todo" : "Create Todo", class: "btn btn-success" %>
 
-    <% if @todo.persisted? %>
-      <%= link_to "Show this todo",
+    <%= link_to "Show this todo",
           todo_path(@todo),
           class: "btn btn-outline-primary" %>
-    <% end %>
 
     <!--<%= link_to "Back", todos_path, class: "btn btn-outline-secondary" %>-->
     
