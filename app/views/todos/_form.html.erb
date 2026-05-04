@@ -49,7 +49,7 @@
 
   <div class="d-flex gap-2 mt-3">
 
-    <%= form.submit "Update Todo", class: "btn btn-success" %>
+    <%= form.submit todo.persisted? ? "Update Todo" : "Create Todo", class: "btn btn-success" %>
 
     <%= link_to "Show this todo", @todo, class: "btn btn-outline-primary" %>
 
