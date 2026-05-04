@@ -54,9 +54,9 @@
     <%= link_to "Show this todo", todo_path(@todo, return_to: params[:return_to] || todos_path), class: "btn btn-outline-primary" %>
 
     <!--<%= link_to "Back", todos_path, class: "btn btn-outline-secondary" %>-->
-    <div class="mt-3">
-      <%= link_to "Back", todo_path(@todo, source: params[:source] || "todos"), class: "btn btn-outline-secondary" %>
-    </div>
+    
+    <%= link_to "Back", todo_path(@todo, source: params[:source] || "todos"), class: "btn btn-outline-secondary" %>
+    
 
   </div>
 
