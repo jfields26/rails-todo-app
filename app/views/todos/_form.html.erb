@@ -2,9 +2,9 @@
 
 <%= form_with(model: todo) do |form| %>
 
-  <% if @todo.errors.any? %>
+  <% if todo.errors.any? %>
     <div class="alert alert-danger">
-      <% @todo.errors.full_messages.each do |msg| %>
+      <% todo.errors.full_messages.each do |msg| %>
         <div><%= msg %></div>
       <% end %>
     </div>
