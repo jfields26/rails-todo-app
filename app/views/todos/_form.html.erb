@@ -1,6 +1,6 @@
 <!-- Jarred Fields -->
 
-<%= form_with(model: @todo) do |form| %>
+<%= form_with(model: @todo || Todo.new) do |form| %>
 
   <% if @todo.errors.any? %>
     <div class="alert alert-danger">
