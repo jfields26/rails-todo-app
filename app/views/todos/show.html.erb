@@ -27,7 +27,7 @@
 <% end %>
 
 <div class="d-flex gap-2 mt-3">
-  <%= link_to "Edit this todo", edit_todo_path(@todo, return_to: params[:return_to] || todos_path), class: "btn btn-outline-secondary" %>
+  <%= link_to "Edit this todo", edit_todo_path(@todo, origin: params[:origin]), class: "btn btn-outline-secondary" %>
   <%= button_to "Destroy this todo", @todo, method: :delete, class: "btn btn-outline-dark" %>
-  <%= link_to "Back", params[:return_to] || todos_path, class: "btn btn-outline-primary" %>
+  <%= link_to "Back", back_path_from_origin(@todo, params[:origin]), class: "btn btn-outline-primary" %>
 </div>

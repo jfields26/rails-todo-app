@@ -27,7 +27,7 @@
       <% end %>
 
       <div class="d-flex gap-2 mt-2">
-        <%= link_to "View", todo_path(todo, return_to: todos_path), class: "btn btn-sm btn-outline-primary" %>
+        <%= link_to "View", todo_path(todo, origin: "todos"), class: "btn btn-sm btn-outline-primary" %>
         <%= link_to "Edit", edit_todo_path(todo, return_to: todos_path), class: "btn btn-sm btn-outline-secondary" %>
         <%= button_to "Delete", todo, method: :delete, class: "btn btn-sm btn-outline-dark" %>
       </div>

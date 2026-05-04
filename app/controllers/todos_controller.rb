@@ -42,7 +42,7 @@ class TodosController < ApplicationController
   # PATCH/PUT /todos/1 or /todos/1.json
   def update
     if @todo.update(todo_params)
-      redirect_to todo_path(@todo, return_to: params[:return_to]), notice: "Todo was successfully updated."
+      redirect_to todo_path(@todo, origin: params[:origin]), notice: "Todo was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -66,7 +66,7 @@ class TodosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def todo_params
-      #params.expect(todo: [ :title, :priority, :completed, :user_id, :category_id ])
+      # params.expect(todo: [ :title, :priority, :completed, :user_id, :category_id ])
       params.require(:todo).permit(:title, :priority, :completed, :category_id, :notes)
     end
 end
