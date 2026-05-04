@@ -17,7 +17,7 @@ class TodosController < ApplicationController
 
   # GET /todos/new
   def new
-    @todo = Todo.new
+    @todo = current_user.todos.new
   end
 
   # GET /todos/1/edit
