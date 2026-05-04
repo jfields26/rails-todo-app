@@ -55,7 +55,7 @@
 
     <% if @todo.persisted? %>
       <%= link_to "Show this todo",
-          todo_path(@todo),
+          todo_path(@todo, source: params[:source]),
           class: "btn btn-outline-primary" %>
     <% end %>
 
