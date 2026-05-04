@@ -56,13 +56,13 @@
     <!--<%= link_to "Show this todo", todo_path(@todo, return_to: params[:return_to] || todos_path), class: "btn btn-outline-primary" %> -->
     <% if todo.persisted? %>
       <%= link_to "Show this todo",
-          todo_path(todo, source: params[:source]),
+          todo_path(todo.id, source: params[:source]),
           class: "btn btn-outline-primary" %>
     <% end %>
 
     <!--<%= link_to "Back", todos_path, class: "btn btn-outline-secondary" %>-->
     
-    <%= link_to "Back", (todo.persisted? ? todo_path(todo, source: params[:source]) : todos_path), class: "btn btn-outline-secondary" %>
+    <%= link_to "Back", (todo.persisted? ? todo_path(todo.id, source: params[:source]) : todos_path), class: "btn btn-outline-secondary" %>
     
 
   </div>
